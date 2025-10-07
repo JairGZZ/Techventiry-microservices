@@ -6,18 +6,22 @@ import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "tbl_categoria")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category {
+public class Categoria {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @UuidGenerator(style = UuidGenerator.Style.RANDOM)
-    private String id;
+    @Column(name = "id_categoria")
+    private String idCategoria;
 
-    private String nombre;
+    @Column(name = "nombre_categoria", nullable = false, length = 100)
+    private String nombreCategoria;
 
+    @Column(name = "descripcion_categoria", length = 255)
     private String descripcion;
 }
+

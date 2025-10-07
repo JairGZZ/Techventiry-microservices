@@ -5,18 +5,21 @@ import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
 @Entity
-@Table(name = "states")
+@Table(name = "tbl_estado")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class State {
+public class Estado {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @UuidGenerator(style = UuidGenerator.Style.RANDOM)
-    private String id;
+    @Column(name = "id_estado")
+    private String idEstado;
 
-    private String nombre;
+    @Column(name = "nombre_estado", nullable = false, length = 100)
+    private String nombreEstado;
 
+    @Column(name = "descripcion_estado", length = 255)
     private String descripcion;
 }
