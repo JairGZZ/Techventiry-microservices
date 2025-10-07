@@ -8,26 +8,28 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "movements")
+@Table(name = "tbl_movimiento")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Movement {
+public class Movimiento {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @UuidGenerator(style = UuidGenerator.Style.RANDOM)
-    private String id;
+    @Column(name = "id_movimiento")
+    private String idMovimiento;
 
-    private String usuarioId;  // viene de Usuarios microservicio
+    @Column(name = "id_usuario", nullable = false)
+    private String idUsuario;
 
+    @Column(name = "tipo_movimiento", nullable = false)
     private String tipoMovimiento;
 
+    @Column(name = "fecha_movimiento", nullable = false)
     private LocalDateTime fechaMovimiento;
 
+    @Column(name = "observaciones", length = 255)
     private String observaciones;
-
-    @OneToMany(mappedBy = "movement", cascade = CascadeType.ALL)
-    private List<ProductMovement> productos;
 }

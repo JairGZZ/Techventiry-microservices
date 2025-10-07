@@ -6,23 +6,26 @@ import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
 @Entity
-@Table(name = "products_movement")
+@Table(name = "tbl_movimiento_prod")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProductMovement {
+public class MovimientoProd {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @UuidGenerator(style = UuidGenerator.Style.RANDOM)
+    @Column(name = "id_movimiento_prod")
     private String id;
 
+    @Column(name = "cantidad", nullable = false)
     private Integer cantidad;
 
-    private String productoId; // viene de Productos microservicio
+    @Column(name = "id_producto", nullable = false)
+    private String idProducto;
 
     @ManyToOne
-    @JoinColumn(name = "movement_id")
-    private Movement movement;
+    @JoinColumn(name = "id_movimiento")
+    private Movimiento movimiento;
 }
