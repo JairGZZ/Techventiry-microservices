@@ -8,10 +8,10 @@ import com.jairdev.Users_MicroService.exception.BusinessException;
 import com.jairdev.Users_MicroService.exception.ResourceNotFoundException;
 import com.jairdev.Users_MicroService.repository.RolRepository;
 import com.jairdev.Users_MicroService.repository.UsuarioRepository;
+import com.jairdev.Users_MicroService.util.SimplePasswordEncoder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -20,7 +20,7 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
     private final RolRepository rolRepository;
-    private final PasswordEncoder passwordEncoder;
+    private final SimplePasswordEncoder passwordEncoder;
 
     public List<Usuario> listarTodos() {
         return usuarioRepository.findAll();
