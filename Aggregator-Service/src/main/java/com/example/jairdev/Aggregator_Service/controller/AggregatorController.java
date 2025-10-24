@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/aggregate")
 @RequiredArgsConstructor
@@ -14,10 +16,9 @@ public class AggregatorController {
 
     private final AggregationService aggregationService;
 
-    @GetMapping("/{userId}/{productId}")
+    @GetMapping("/{userId}/")
     public ResponseEntity<CombinedInfoResponse> getCombinedInfo(
-            @PathVariable String userId,
-            @PathVariable String productId) {
-        return ResponseEntity.ok(aggregationService.combineData(userId, productId));
+            @PathVariable String userId) {
+        return ResponseEntity.ok(aggregationService.combineData(userId));
     }
 }

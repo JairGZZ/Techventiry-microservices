@@ -18,9 +18,9 @@ public class AggregationService {
     private final UsuarioClient userClient;
     private final ProductoClient productClient;
 
-    public CombinedInfoResponse combineData(String userId, String productId) {
+    public CombinedInfoResponse combineData(String userId) {
         UsuarioResponse usuario = userClient.obtenerUsuarioPorId(userId);
-        List<ProductoResponse> producto = productClient.obtenerTodos();
+        List<ProductoResponse> producto = productClient.listarProductos();
         return new CombinedInfoResponse(usuario, producto);
     }
 }

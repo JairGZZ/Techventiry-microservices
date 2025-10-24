@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class RolDTO {
-    private String idRol;
-    private String nombreRol;
+    private String id;
+    private String nombre;
+    private String descripcion;
 }

@@ -15,12 +15,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
-@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 public class ProductoController {
 
     private final ProductoService productoService;
-
 
     @PostMapping
     public ResponseEntity<Producto> crearProducto(@Valid @RequestBody ProductoRequest request) {
@@ -72,6 +70,4 @@ public class ProductoController {
         productoService.eliminar(id);
         return ResponseEntity.noContent().build();
     }
-
-
 }
