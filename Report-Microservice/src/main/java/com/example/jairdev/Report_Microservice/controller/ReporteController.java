@@ -33,14 +33,14 @@ public class ReporteController {
             )
     })
     @GetMapping(
-            value = "/{usuarioId}/{productoId}",
+            value = "/{usuarioId}/",
             produces = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
     public ResponseEntity<byte[]> exportarProductos(
-            @PathVariable String usuarioId,
-            @PathVariable String productoId) throws IOException {
+            @PathVariable String usuarioId
+          ) throws IOException {
 
-        byte[] excel = excelExportService.exportarProductosAExcel(usuarioId, productoId);
+        byte[] excel = excelExportService.exportarProductosAExcel(usuarioId);
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"productos.xlsx\"")

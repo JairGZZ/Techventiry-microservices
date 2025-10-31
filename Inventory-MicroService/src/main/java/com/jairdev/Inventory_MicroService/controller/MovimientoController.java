@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/movimientos")
-@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 public class MovimientoController {
 

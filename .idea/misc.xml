@@ -7,6 +7,11 @@
         <option value="$PROJECT_DIR$/Users-MicroService/pom.xml" />
         <option value="$PROJECT_DIR$/Products-MicroService/pom.xml" />
         <option value="$PROJECT_DIR$/Inventory-MicroService/pom.xml" />
+        <option value="$PROJECT_DIR$/TechVentory-EurekaServer/pom.xml" />
+        <option value="$PROJECT_DIR$/TechVentory-APIGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/Report-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/TechVentory-ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/Aggregator-Service/pom.xml" />
       </list>
     </option>
   </component>

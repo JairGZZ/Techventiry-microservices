@@ -12,5 +12,5 @@ import java.util.List;
 @NoArgsConstructor
 public class CombinedInfoResponse {
     private UsuarioResponse usuario;
-    private ProductoResponse producto;
+    private List<ProductoResponse> producto;
 }

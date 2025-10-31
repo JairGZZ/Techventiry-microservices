@@ -3,23 +3,38 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for Inventory-MicroService" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="TechVentory-APIGateway" />
+        <module name="TechVentory-ConfigServer" />
+        <module name="Report-Microservice" />
+        <module name="TechVentory-EurekaServer" />
+      </profile>
+      <profile name="Annotation profile for Users-MicroService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
         </processorPath>
-        <module name="Products-MicroService" />
         <module name="Inventory-MicroService" />
+        <module name="Aggregator-Service" />
         <module name="Users-MicroService" />
+        <module name="Products-MicroService" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Aggregator-Service" options="-parameters" />
       <module name="Inventory-MicroService" options="-parameters" />
       <module name="Products-MicroService" options="-parameters" />
+      <module name="Report-Microservice" options="-parameters" />
+      <module name="TechVentory-APIGateway" options="-parameters" />
+      <module name="TechVentory-ConfigServer" options="-parameters" />
+      <module name="TechVentory-EurekaServer" options="-parameters" />
       <module name="Users-MicroService" options="-parameters" />
     </option>
   </component>

@@ -15,11 +15,11 @@ public class CorsConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
 
-        // Solo un origen
-        corsConfig.addAllowedOrigin("http://localhost:4200");
+        // Permitir TODOS los orígenes
+        corsConfig.addAllowedOriginPattern("*");
 
         // Métodos permitidos
-        corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
 
         // Todos los headers
         corsConfig.addAllowedHeader("*");
@@ -27,7 +27,9 @@ public class CorsConfig {
         // Headers expuestos
         corsConfig.addExposedHeader("*");
 
+        // IMPORTANTE: Con allowedOriginPattern("*") puedes usar allowCredentials
         corsConfig.setAllowCredentials(true);
+
         corsConfig.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -36,4 +38,3 @@ public class CorsConfig {
         return new CorsWebFilter(source);
     }
 }
-

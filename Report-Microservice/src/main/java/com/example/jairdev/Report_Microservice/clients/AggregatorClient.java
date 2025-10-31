@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "aggregator-service")
 public interface AggregatorClient {
 
-    @GetMapping("/api/aggregate/{userId}/{productId}")
+    @GetMapping("/api/aggregate/{userId}/")
     CombinedInfoResponse getCombinedInfo(
-        @PathVariable("userId") String userId,
-        @PathVariable("productId") String productId
+        @PathVariable("userId") String userId
+
     );
 }
